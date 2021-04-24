@@ -4,9 +4,9 @@
 setwd("/Users/Giulia/desktop/lab/")
 
 #install.packages("raster")
-library("raster")
+library(raster)
 
-#il comando brick mi serve per importare dentro ad R
+#il comando brick mi serve per importare dentro ad R, brick vuol dire che importiamo l'intero set di bande
 p224r63_2011<-brick("p224r63_2011_masked.grd")
 # comando per avere visualizzazione dei dati
 plot(p224r63_2011)
@@ -102,8 +102,30 @@ plotRGB(p224r63_2011, r=3, g=2, b=1, stretch="Lin")
 plotRGB(p224r63_2011, r=3, g=4, b=2, stretch="Lin")
 plotRGB(p224r63_2011, r=3, g=4, b=2, stretch="hist")
 
+#multitemporal set
+p224r63_1988<-brick("p224r63_1988_masked.grd")
+p224r63_1988
+
+#vediamo immagine delle bande, le bande sono le stesse dell'immagine del 2011
+plot(p224r63_1988)
+#plot con la classificazione rgb abbiamo r=3, g=2, b=1 e strech per stirare i nostri valori
+plotRGB(p224r63_1988,r=3,g=2, b=1, stretch="Lin")
+plotRGB(p224r63_1988,r=4,g=3, b=2, stretch="Lin")
 
 
+#mettiamo insieme le due immagini 
+par(mfrow=c(2,1))
+plotRGB(p224r63_1988,r=3,g=2, b=1, stretch="Lin")
+plotRGB(p224r63_1988,r=4,g=3, b=2, stretch="Lin")
+
+#mettiamo insieme immagini--> nella prima riga mettiamo quelle lineari, mentre nella seconda riga istogram strech
+pdf("multitemp.pdf")
+par(mfrow=c(2,2))
+plotRGB(p224r63_1988,r=4,g=3, b=2, stretch="Lin")
+plotRGB(p224r63_2011,r=4,g=3, b=2, stretch="Lin")
+plotRGB(p224r63_1988,r=4,g=3, b=2, stretch="hist")
+plotRGB(p224r63_2011,r=4,g=3, b=2, stretch="hist")
+dev.off()
 
 
 

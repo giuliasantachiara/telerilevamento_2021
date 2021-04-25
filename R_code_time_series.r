@@ -68,11 +68,11 @@ levelplot(TGm)
 #calcoliamo di quanto si sono ridotti i ghiacci, e facciamo un calcolo tra matrici
 melt_ammount<-TGm$X2007annual_melt - TGm$X1979annual_melt
 melt_ammount
-
-
 #aggiungiamo anche una palette personalizzata
-cl<-colorRampPalette(c("blue","light blue","pink", "red"))(100)
-  
+clb<-colorRampPalette(c("blue","white", "red"))(100)
+plot(melt_ammount, col=clb)
+#facciamo anche con il comando levelplot
+levelplot(melt_ammount, col.regions=clb)
 
 
 

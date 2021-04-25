@@ -54,6 +54,24 @@ levelplot(TGr, col.regions=cl)
 # se vogliamo cambiare palette e titolo
 levelplot(TGr, col.regions=cl, names.attr=c("July 2000", "July 2005", "July 2010", "July 2015"))
 
+#guardiamo nuvo set di dati di melt Geenland
+m_list<-list.files(pattern="melt")
+m_list
+#una volta fatta la lista faccio il comando che applica a tutti la stessa funzione--> lapply
+m_import<-lapply(mlist, raster)
+m_import
+#impacchettiamo tutti i file insieme con la funzione stack e li plottiamo, quindi con una funzione facciamo quello che facevano con tanti comandi
+TGm<-(stack(m_import))
+TGm<-(stack(m_import))
+#facciamo un level plot dei dati
+levelplot(TGm)
+#calcoliamo di quanto si sono ridotti i ghiacci, e facciamo un calcolo tra matrici
+melt_ammount<-TGm$X2007annual_melt - TGm$X1979annual_melt
+melt_ammount
+
+
+#aggiungiamo anche una palette personalizzata
+cl<-colorRampPalette(c("blue","light blue","pink", "red"))(100)
   
 
 

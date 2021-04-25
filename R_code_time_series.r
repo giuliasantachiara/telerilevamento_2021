@@ -2,8 +2,11 @@
 #greenland increase of temperature
 #data and code from Emanuela Costa
 
-#carichiamo il pacchetto raster
+#carichiamo i pacchetti che dobbiamo utilizzare
+#install.packages("raster")
+#install.packages("rasterVis")
 library(raster)
+library(rasterVis)
 #prendiamo la cartella giusta
 setwd("/Users/Giulia/desktop/lab/greenland")
 #dati che analizziamo sono presi da copernicus e sono delle temperature
@@ -26,8 +29,8 @@ plot(lst_2010)
 plot(lst_2015)
 dev.off()
 
-#lapply funzione che mi permette di applicare la funzione raster a una lista di file. con un solo comando carico tante informazionià
-#prima quindi facciamo la lista dei file che voglio caricare su R, nel pattern mettiamo il nume che tutti i file hanno in comune
+#lapply funzione che mi permette di applicare la funzione raster a una lista di file. con un solo comando carico tante informazioni
+#prima quindi facciamo la lista dei file che voglio caricare su R, nel pattern mettiamo il nome che tutti i file hanno in comune
 rlist<-list.files(pattern="tif")
 rlist
 #una volta fatta la lista faccio il comando che applica a tutti la stessa funzione
@@ -41,3 +44,21 @@ plotRGB(TGr,1,2,3,stretch="Lin")
 #se abbiamo più colori scuri allora vuol dire che impatta di più l'immagine che si trova nella banda blu
 #proviamo a invertire le immagini
 plotRGB(TGr,2,3,4,stretch="Lin")
+
+#è questo compando è simile al comando plot ma è molto più potente e da una visualizzazione migliore
+levelplot(TGr)
+levelplot(TGr$lst_2000)
+#assegnamo un nuova palette di colori
+cl<-colorRampPalette(c("blue","light blue","pink", "red"))(100)
+levelplot(TGr, col.regions=cl)
+# se vogliamo cambiare palette e titolo
+levelplot(TGr, col.regions=cl, names.attr=c("July 2000", "July 2005", "July 2010", "July 2015"))
+
+  
+
+
+
+
+
+
+

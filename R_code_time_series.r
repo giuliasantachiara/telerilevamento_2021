@@ -7,7 +7,7 @@
 #install.packages("rasterVis")
 library(raster)
 library(rasterVis)
-#prendiamo la cartella giusta
+#indirizziamo nella giusta working directory
 setwd("/Users/Giulia/desktop/lab/greenland")
 #dati che analizziamo sono presi da copernicus e sono delle temperature
 

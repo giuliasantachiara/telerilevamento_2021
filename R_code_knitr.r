@@ -3,7 +3,7 @@
 
 
 #indirizziamo nella giusta working directory
-setwd("/Users/Giulia/desktop/lab/greenland")
+setwd("/Users/Giulia/desktop/lab/greenland/")
 
 library(knitr)
 

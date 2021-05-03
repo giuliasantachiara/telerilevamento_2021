@@ -31,8 +31,23 @@ sunc<-unsuperClass(sun, nClasses=3)
 plot(sunc$map)
 
 
-
-
+#analizziamo il Gran Canyon
+#immagine scaricata da : https://landsat.visibleearth.nasa.gov/view.php?id=80948
+#carichiamo l'immagine su r con la funzione brick
+gc<-brick("dolansprings_oli_2013088_canyon_lrg.jpg")
+gc
+#visualizziamo l'immagine in rgb
+plotRGB(gc,r=1,g=2,b=3, stretch="lin")
+#proviamo a cambiare la visualizzazione
+plotRGB(gc,r=1,g=2,b=3, stretch="hist")
+#facciamo modello di classificazione
+gcc2<-unsuperClass(gc,nClasses=2)
+plot(gcc2$map)
+#da questo plot, ad occhio, si vede che le parti più scure sono state assegnate ad una classe, mentre
+#quelle più chiare sono state assegnate ad un'altra classe
+#proviamo a fare una classificazione con 4 classi
+gcc4<-unsuperClass(gc,nClasses=4)
+plot(gcc4$map)
 
 
 

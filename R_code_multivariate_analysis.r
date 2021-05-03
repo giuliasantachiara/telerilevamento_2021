@@ -72,6 +72,12 @@ summary(p224r63_2011res_pca$model)
 
 plotRGB(p224r63_2011res_pca$map,r=1,g=2,b=3,stretch="lin")
 
+#proviamo a plottare le componenti
+plot(p224r63_2011res_pca$map$PC1,p224r63_2011res_pca$map$PC2)
+#per notizie aggiuntive:
+str(p224r63_2011res_pca)
+#con la pca quindi abbiamo selezionato un numero minore di bande, facilitando quindi il lavoro, ma che comunque ci descrivono bene tutta la varianza 
+
 
 
 

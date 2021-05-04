@@ -2,6 +2,7 @@
 
 #pacchetti da utilizzare 
 library(raster)
+library(RStoolbox) # for vegetation indices calculation
 
 #andiamo nella working directory giusta
 setwd("/Users/Giulia/desktop/lab")
@@ -48,20 +49,9 @@ ndvi1<-(defor1$defor1.1-defor1$defor1.2)/(defor1$defor1.1+defor1$defor1.2)
 #plottiamo
 plot(ndvi1,col=cl)
 
+#RStoolbox::spectralIndices
+vi1 <- spectralIndices(defor1, green = 3, red = 2, nir = 1)
+plot(vi, col=cl)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+vi2 <- spectralIndices(defor2, green = 3, red = 2, nir = 1)
+plot(vi2, col=cl)

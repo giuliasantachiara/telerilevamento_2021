@@ -3,6 +3,10 @@
 #pacchetti da utilizzare 
 library(raster)
 library(RStoolbox) # for vegetation indices calculation
+#install.packages("rasterdiv")
+library(rasterdiv)#for the worldwide NDVI
+#install.packages(rasterVis)
+library(rasterVis)
 
 #andiamo nella working directory giusta
 setwd("/Users/Giulia/desktop/lab")
@@ -55,3 +59,24 @@ plot(vi, col=cl)
 
 vi2 <- spectralIndices(defor2, green = 3, red = 2, nir = 1)
 plot(vi2, col=cl)
+
+#worldwide NDVI
+plot(copNDVI)
+
+#Pixels with walues 253,254 and 255 (water) will be set as NA's
+copNDVI<-raster::reclassify(copNDVI,cbind(252,255,NA), right=TRUE)
+plot(copNDVI)
+
+#rasterVis package needed:
+levelplot(copNDVI)
+#dall'immagine si vede che la maggior parte della biomassa vegetale si trova nell'esmistero nord e questo perchè c'è più luce in questa zona
+#mentre i deserti stanno a 23 gradi nord perchè sopra queste zone abbiamo aria molto secca e quindi non c'è abbastanza ''umidità'' da permettere la crescita di vegetazione in questa zona
+
+
+
+
+
+
+
+
+

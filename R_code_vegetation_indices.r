@@ -69,8 +69,7 @@ plot(copNDVI)
 
 #rasterVis package needed:
 levelplot(copNDVI)
-#dall'immagine si vede che la maggior parte della biomassa vegetale si trova nell'esmistero nord e questo perchè c'è più luce in questa zona
-#mentre i deserti stanno a 23 gradi nord perchè sopra queste zone abbiamo aria molto secca e quindi non c'è abbastanza ''umidità'' da permettere la crescita di vegetazione in questa zona
+#immagine di come respira la terra e abbiamo i valori media di biomassa vegetale dal 1997(circa) ad oggi
 
 
 

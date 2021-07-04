@@ -10,7 +10,7 @@
 #i pacchetti utilizzati sono:
 library(raster)
 library(RStoolbox)#per calcolo della PCA
-library(rasterVis)#per levelplot
+library(rasterVis)
 library(ggplot2)#per fare il gg plot
 library(gridExtra)#per plottare ggplots insieme
 library(viridis)#per colorare i ggplots

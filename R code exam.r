@@ -86,7 +86,7 @@ plot(diff, col=cl, main="Perdita di manto nevoso")
 #stabilisco la grandezza della matrice, in questo caso è una matrice con 5 colonne e 5 righe
 #poi stabilisco l'operazione che voglio calcolare, in questo sd per standard deviation
 dev.st<-focal(diff,w=matrix(1/25,nrow=5,ncol=5), fun=sd) 
-cl<-colorRampPalette (c('blue','green','magenta','yellow'))(100)#creo un palette di colori
+cl<-colorRampPalette (c('blue','green','yellow','magenta'))(100)#creo un palette di colori
 plot(dev.st,col=cl,main="Deviazione Standard")
 
 

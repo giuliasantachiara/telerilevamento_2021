@@ -31,7 +31,6 @@ plot (fuji21)
 
 #per vedere immagini con colori reali
 #multiframe with ggplot2 and gridExtra
-#con questo comando che unisce i plot
 p1<-ggRGB(fuji13,r=1,g=2,b=3, stretch="lin")
 p2<-ggRGB(fuji21,r=1,g=2,b=3, stretch="lin")
 #con questo comando che unisce i plot

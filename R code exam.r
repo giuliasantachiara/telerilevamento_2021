@@ -3,8 +3,8 @@
 #le immagini analizzate-> https://earthobservatory.nasa.gov/images/147780/mount-fujis-missing-snow
 
 #1. calcolo della pca
-#2. calcolo della differenza 
-#3. calcolo della deviazionbe standard o della media per vedere dove sono i punti in cui le cose sono cambiate di più
+#2. calcolo della perdita di manto nevoso 
+#3. calcolo della deviazionbe standard per vedere dove sono i punti in cui le cose sono cambiate di più
 
 
 #i pacchetti utilizzati sono:
@@ -91,5 +91,4 @@ plot(dev.st,col=cl,main="Deviazione Standard")
 
 
 
-#-----------------------------------------------------------------------------------
-
+#----------------------------------------------------------------------------------
